@@ -7,10 +7,76 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.umkc.jwolf76dev.lab1.MainActivity">
+    tools:context="edu.umkc.jwolf76dev.lab1.MainActivity"
+    android:clickable="true"
+    android:background="#000000">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/strike_label"
+        android:text="@string/strike_label"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/strike_count_value"
+        android:text="@string/strike_count_value"
+        android:layout_alignTop="@id/strike_label"
+        android:layout_toEndOf="@id/strike_label"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/ball_label"
+        android:text="@string/ball_label"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/strike_label"
+        android:layout_alignEnd="@+id/strike_label"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/ball_count_value"
+        android:text="@string/ball_count_value"
+        android:layout_alignTop="@id/ball_label"
+        android:layout_toEndOf="@id/ball_label"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strike_button_label"
+        android:id="@+id/strike_button"
+        android:layout_below="@id/ball_label"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textSize="30sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ball_button_label"
+        android:id="@+id/ball_button"
+        android:layout_below="@id/strike_button"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/strike_button"
+        android:layout_alignEnd="@+id/strike_button"
+        android:textSize="30sp" />
 </RelativeLayout>
