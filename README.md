@@ -13,8 +13,8 @@ The purpose of labs 1 and 2 is to give you practice with Android features you ar
 Create a custom application launch icon for your application.
 
 Hints:  
-1. Create an image using an image editing program such as Gimp. Make it square. Save it as a .png with a transparent background. Make sure file name is all lower case characters with no special symbols.
-2. If you want your application icon (or other image) to look great no matter the screen resolution of the device, you will want to create and save images at different resolutions. One option is to use Asset Studio. (ref: http://developer.android.com/tools/help/image-asset-studio.html) The manual way is to copy images at different resolutions to mipmap res subfolders. [May have to switch to Project View. If you have only one image, copy to any one of the subfolders.]
+1. Create an image using an image editing program such as Gimp. Make it square. Save it as a .png with a transparent background. Make sure file name is all lower case characters with no special symbols.  
+2. If you want your application icon (or other image) to look great no matter the screen resolution of the device, you will want to create and save images at different resolutions. One option is to use Asset Studio. (ref: http://developer.android.com/tools/help/image-asset-studio.html) The manual way is to copy images at different resolutions to mipmap res subfolders. [May have to switch to Project View. If you have only one image, copy to any one of the subfolders.]  
 3. Reference the image in the manifest file under application/icon.
 
 For more information about drawable images in Android, see: http://developer.android.com/design/style/iconography.html
