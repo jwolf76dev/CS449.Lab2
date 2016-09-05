@@ -12,10 +12,10 @@ The purpose of labs 1 and 2 is to give you practice with Android features you ar
 ## Part 1 – Application Icon
 Create a custom application launch icon for your application.
 
-Hints:
-1.	Create an image using an image editing program such as Gimp. Make it square. Save it as a .png with a transparent background. Make sure file name is all lower case characters with no special symbols.
-2.	If you want your application icon (or other image) to look great no matter the screen resolution of the device, you will want to create and save images at different resolutions. One option is to use Asset Studio. (ref: http://developer.android.com/tools/help/image-asset-studio.html) The manual way is to copy images at different resolutions to mipmap res subfolders. [May have to switch to Project View. If you have only one image, copy to any one of the subfolders.]
-3.	Reference the image in the manifest file under application/icon.
+Hints: 
+1. Create an image using an image editing program such as Gimp. Make it square. Save it as a .png with a transparent background. Make sure file name is all lower case characters with no special symbols.
+2. If you want your application icon (or other image) to look great no matter the screen resolution of the device, you will want to create and save images at different resolutions. One option is to use Asset Studio. (ref: http://developer.android.com/tools/help/image-asset-studio.html) The manual way is to copy images at different resolutions to mipmap res subfolders. [May have to switch to Project View. If you have only one image, copy to any one of the subfolders.]
+3. Reference the image in the manifest file under application/icon.
 
 For more information about drawable images in Android, see: http://developer.android.com/design/style/iconography.html
 
@@ -26,11 +26,6 @@ Note, you can specify an icon for both the application and main activity. If you
 ## Part 2 - Menus
 Add a menu to the main activity of the application. Include two options, one for resetting the count (“Reset”) and another for displaying information about the application (“About”). Place the reset menu option icon on the action bar with text “Reset” if there is room. Make sure the About menu option always stays in the overflow area.
 
-References:  
-http://developer.android.com/guide/topics/ui/menus.html
-http://developer.android.com/guide/topics/resources/menu-resource.html
-http://developer.android.com/training/basics/firstapp/starting-activity.html
-
 Note, you may have to rotate the screen to create enough room on the action/tool bar for the text “Reset” to display.
 
 Selecting the Reset menu option should reset the count. Selecting the About menu option should display a new activity with information about the application. Be sure to include your name in the new activity.
@@ -39,9 +34,14 @@ You can use Android Stuidio’s Image Asset program to create the icon for your 
 
 An alternative to creating your own drawable is to copy existing system drawables from the SDK. You can find these files at: C:\Users\<user name>\AppData\Local\Android\sdk\platforms\android-23\data\res\drawable-hdpi
 
-Another option is to reference one of the system icon images. Example: icon=”@android:drawable/ic_menu_add”. However, these aren’t consistent across devices.
+Another option is to reference one of the system icon images. Example: `icon=”@android:drawable/ic_menu_add”`. However, these aren’t consistent across devices.
 
 **[Extra Credit]** Provide a contextual menu using the contextual action mode on the background  of the main activity (or any UI component of your choosing) such that when the user long clicks a menu pops up that offers the ball and strike options.
+
+References:  
+http://developer.android.com/guide/topics/ui/menus.html
+http://developer.android.com/guide/topics/resources/menu-resource.html
+http://developer.android.com/training/basics/firstapp/starting-activity.html
 
 ## Part 3 – Persistent Storage
 Add a field which counts total outs. The value should persist between sessions (even when user exits the app by pressing the back key). The only way to reset the value is by clearing the data for the app through settings.
