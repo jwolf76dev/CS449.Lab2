@@ -12,7 +12,7 @@ The purpose of labs 1 and 2 is to give you practice with Android features you ar
 ## Part 1 – Application Icon
 Create a custom application launch icon for your application.
 
-Hints: 
+Hints:  
 1. Create an image using an image editing program such as Gimp. Make it square. Save it as a .png with a transparent background. Make sure file name is all lower case characters with no special symbols.
 2. If you want your application icon (or other image) to look great no matter the screen resolution of the device, you will want to create and save images at different resolutions. One option is to use Asset Studio. (ref: http://developer.android.com/tools/help/image-asset-studio.html) The manual way is to copy images at different resolutions to mipmap res subfolders. [May have to switch to Project View. If you have only one image, copy to any one of the subfolders.]
 3. Reference the image in the manifest file under application/icon.
@@ -39,9 +39,9 @@ Another option is to reference one of the system icon images. Example: `icon=”
 **[Extra Credit]** Provide a contextual menu using the contextual action mode on the background  of the main activity (or any UI component of your choosing) such that when the user long clicks a menu pops up that offers the ball and strike options.
 
 References:  
-http://developer.android.com/guide/topics/ui/menus.html
-http://developer.android.com/guide/topics/resources/menu-resource.html
-http://developer.android.com/training/basics/firstapp/starting-activity.html
+http://developer.android.com/guide/topics/ui/menus.html  
+http://developer.android.com/guide/topics/resources/menu-resource.html  
+http://developer.android.com/training/basics/firstapp/starting-activity.html  
 
 ## Part 3 – Persistent Storage
 Add a field which counts total outs. The value should persist between sessions (even when user exits the app by pressing the back key). The only way to reset the value is by clearing the data for the app through settings.
