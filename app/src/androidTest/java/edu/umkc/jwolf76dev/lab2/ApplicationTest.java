@@ -1,4 +1,4 @@
-package edu.umkc.jwolf76dev.lab1;
+package edu.umkc.jwolf76dev.lab2;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
