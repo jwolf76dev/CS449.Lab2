@@ -2,12 +2,12 @@
 UMKC Fall 2016, Eddie Burris
 
 The purpose of labs 1 and 2 is to give you practice with Android features you are likely to use this semester as you implement your project idea. Lab 1 gave you practice with Activities, UI components, event handlers and dialog boxes. Lab 2 adds:
-•	Application icons
-•	Menus (action/tool bar and contextual menus)
-•	Starting a new Activity
-•	Persistent storage (saving state between sessions)
-•	Screen Rotation (switching back and forth between portrait and landscape) 
-•	Preferences (PreferenceActivity)
+* Application icons
+*	Menus (action/tool bar and contextual menus)
+*	Starting a new Activity
+*	Persistent storage (saving state between sessions)
+*	Screen Rotation (switching back and forth between portrait and landscape) 
+*	Preferences (PreferenceActivity)
 
 Part 1 – Application Icon
 Create a custom application launch icon for your application.
