@@ -2,15 +2,19 @@ package edu.umkc.jwolf76dev.lab2;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static final private String TAG = "Umpire Buddy v1.0";
+    static final private String TAG = "Umpire Buddy v2.0";
+//    static final String EXTRA_DATA = "1";
 
     private int strike_count = 0;
     private int ball_count = 0;
@@ -41,6 +45,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView t = (TextView)findViewById(R.id.ball_count_value);
         t.setText(Integer.toString(ball_count));
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        switch (item.getItemId()) {
+            case R.id.reset:
+                strike_count = 0;
+                ball_count = 0;
+                updateStrikeCount();
+                updateBallCount();
+                return true;
+            case R.id.about:
+                Intent intent = new Intent(this, AboutActivity.class);
+//                intent.putExtra(EXTRA_DATA, "extra data or parameter you want to pass to activity");
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
