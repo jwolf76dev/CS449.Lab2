@@ -79,4 +79,29 @@
         android:layout_alignStart="@+id/strike_button"
         android:layout_alignEnd="@+id/strike_button"
         android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_label_totalOuts"
+        android:id="@+id/totalOuts_label"
+        android:layout_below="@+id/ball_button"
+        android:layout_toStartOf="@+id/ball_count_value"
+        android:layout_marginTop="37dp"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/totalOuts_value"
+        android:text="@string/count_value_ball"
+        android:layout_alignTop="@id/totalOuts_label"
+        android:layout_toEndOf="@id/totalOuts_label"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff" />
 </RelativeLayout>

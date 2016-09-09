@@ -3,21 +3,27 @@ package edu.umkc.jwolf76dev.lab2;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     static final private String TAG = "Umpire Buddy v2.0";
+    private static final String PREFS_NAME = "PrefsFile";
+    private static final String TOTAL_OUTS = "totalOuts";
+
 //    static final String EXTRA_DATA = "1";
 
     private int strike_count = 0;
     private int ball_count = 0;
+    private int totalOuts_count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         BallButton.setOnClickListener(this);
 
         updateBallCount();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        totalOuts_count = settings.getInt(TOTAL_OUTS, totalOuts_count);
+        updateTotalOutsCount();
     }
 
     private void updateStrikeCount() {
@@ -44,6 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateBallCount() {
         TextView t = (TextView)findViewById(R.id.ball_count_value);
         t.setText(Integer.toString(ball_count));
+    }
+
+    private void updateTotalOutsCount() {
+        TextView t = (TextView) findViewById(R.id.totalOuts_value);
+        t.setText(Integer.toString(totalOuts_count));
     }
 
     @Override
@@ -93,6 +108,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             ball_count = 0;
                             updateBallCount();
+
+                            totalOuts_count++;
+                            updateTotalOutsCount();
+
+                            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                            SharedPreferences.Editor editor = settings.edit();
+                            editor.putInt(TOTAL_OUTS, totalOuts_count);
+                            // Commit the edits
+                            editor.commit();
                         }
                     });
                     builder.show();
@@ -122,7 +146,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
-            updateStrikeCount();
-            updateBallCount();
+
+        updateStrikeCount();
+        updateBallCount();
+        updateTotalOutsCount();
     }
 }
