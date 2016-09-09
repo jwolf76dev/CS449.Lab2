@@ -10,16 +10,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static final private String TAG = "Umpire Buddy v2.0";
+    private static final String TAG = "Umpire Buddy v2.0";
     private static final String PREFS_NAME = "PrefsFile";
     private static final String TOTAL_OUTS = "totalOuts";
-
-//    static final String EXTRA_DATA = "1";
 
     private int strike_count = 0;
     private int ball_count = 0;
@@ -30,6 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         Log.i(TAG, "Starting onCreate...");
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            strike_count = savedInstanceState.getInt("strike_count");
+            ball_count = savedInstanceState.getInt("ball_count");
+        }
 
         View StrikeButton = findViewById(R.id.strike_button);
         StrikeButton.setOnClickListener(this);
@@ -47,12 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateStrikeCount() {
-        TextView t = (TextView)findViewById(R.id.strike_count_value);
+        TextView t = (TextView) findViewById(R.id.strike_count_value);
         t.setText(Integer.toString(strike_count));
     }
 
     private void updateBallCount() {
-        TextView t = (TextView)findViewById(R.id.ball_count_value);
+        TextView t = (TextView) findViewById(R.id.ball_count_value);
         t.setText(Integer.toString(ball_count));
     }
 
@@ -83,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             case R.id.about:
                 Intent intent = new Intent(this, AboutActivity.class);
-//                intent.putExtra(EXTRA_DATA, "extra data or parameter you want to pass to activity");
                 startActivity(intent);
                 return true;
             default:
@@ -150,5 +151,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         updateStrikeCount();
         updateBallCount();
         updateTotalOutsCount();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle icicle) {
+        super.onSaveInstanceState(icicle);
+
+        Log.i(TAG, "onSaveInstanceState()");
+        icicle.putInt("strike_count", strike_count);
+        icicle.putInt("ball_count", ball_count);
     }
 }
