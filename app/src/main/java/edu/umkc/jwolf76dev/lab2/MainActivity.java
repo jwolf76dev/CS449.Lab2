@@ -35,12 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         View StrikeButton = findViewById(R.id.strike_button);
         StrikeButton.setOnClickListener(this);
-
         updateStrikeCount();
 
         View BallButton = findViewById(R.id.ball_button);
         BallButton.setOnClickListener(this);
-
         updateBallCount();
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);

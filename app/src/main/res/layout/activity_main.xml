@@ -1,107 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:clickable="true"
+    android:orientation="vertical"
+    android:gravity="center"
     android:background="#000000">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/strike_label"
-        android:text="@string/text_label_strike"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="50dp"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
+        android:orientation="horizontal"
+        android:padding="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/strike_count_value"
-        android:text="@string/count_value_strike"
-        android:layout_alignTop="@id/strike_label"
-        android:layout_toEndOf="@id/strike_label"
-        android:layout_marginStart="20dp"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
+        <TextView
+            android:id="@+id/strike_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_label_strike"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/ball_label"
-        android:text="@string/text_label_ball"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/strike_label"
-        android:layout_alignEnd="@+id/strike_label"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
+        <TextView
+            android:id="@+id/strike_count_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/count_value_strike"
+            android:layout_marginStart="20dp"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
 
-    <TextView
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/ball_count_value"
-        android:text="@string/count_value_ball"
-        android:layout_alignTop="@id/ball_label"
-        android:layout_toEndOf="@id/ball_label"
-        android:layout_marginStart="20dp"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/ball_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_label_ball"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/ball_count_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/count_value_ball"
+            android:layout_marginStart="20dp"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_label_strike"
         android:id="@+id/strike_button"
-        android:layout_below="@id/ball_label"
-        android:layout_marginTop="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/button_label_strike"
         android:textSize="30sp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/ball_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_label_ball"
-        android:id="@+id/ball_button"
-        android:layout_below="@id/strike_button"
         android:layout_marginTop="20dp"
-        android:layout_alignStart="@+id/strike_button"
-        android:layout_alignEnd="@+id/strike_button"
         android:textSize="30sp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_label_totalOuts"
-        android:id="@+id/totalOuts_label"
-        android:layout_below="@+id/ball_button"
-        android:layout_toStartOf="@+id/ball_count_value"
-        android:layout_marginTop="37dp"
-        android:layout_marginStart="20dp"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
+        android:orientation="horizontal"
+        android:padding="20dp" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/totalOuts_value"
-        android:text="@string/count_value_ball"
-        android:layout_alignTop="@id/totalOuts_label"
-        android:layout_toEndOf="@id/totalOuts_label"
-        android:layout_marginStart="20dp"
-        android:textSize="30sp"
-        android:textColor="#ffffff" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/totalOuts_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/text_label_totalOuts"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/totalOuts_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/count_value_ball"
+            android:layout_marginStart="20dp"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</LinearLayout>
